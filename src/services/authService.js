@@ -1,6 +1,6 @@
 const AUTH_API_URL = import.meta.env.DEV 
   ? '/api/auth/signin' 
-  : 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://platform.zone01.gr/api/auth/signin');
+  : 'https://platform.zone01.gr/api/auth/signin';
 const JWT_STORAGE_KEY = 'zone01_jwt';
 
 export const authService = {
