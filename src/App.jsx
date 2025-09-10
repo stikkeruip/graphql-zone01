@@ -31,11 +31,7 @@ function App() {
       const token = localStorage.getItem('zone01_jwt')
       if (!token) return
 
-      const endpoint = import.meta.env.DEV 
-        ? '/api/graphql-engine/v1/graphql'
-        : 'https://platform.zone01.gr/api/graphql-engine/v1/graphql';
-      
-      const response = await fetch(endpoint, {
+      const response = await fetch('/api/graphql-engine/v1/graphql', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

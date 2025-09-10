@@ -1,8 +1,6 @@
 class GraphQLService {
   constructor() {
-    this.endpoint = import.meta.env.DEV 
-      ? '/api/graphql-engine/v1/graphql'
-      : 'https://platform.zone01.gr/api/graphql-engine/v1/graphql';
+    this.endpoint = '/api/graphql-engine/v1/graphql';
   }
 
   async query(query, variables = {}) {
