@@ -1,6 +1,6 @@
 class GraphQLService {
   constructor() {
-    this.endpoint = '/api/graphql-engine/v1/graphql';
+    this.endpoint = 'https://zone01.gr/api/graphql-engine/v1/graphql';
   }
 
   async query(query, variables = {}) {

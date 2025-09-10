@@ -1,4 +1,4 @@
-const AUTH_API_URL = '/api/auth/signin';
+const AUTH_API_URL = 'https://zone01.gr/api/auth/signin';
 const JWT_STORAGE_KEY = 'zone01_jwt';
 
 export const authService = {
