@@ -33,7 +33,7 @@ function App() {
 
       const endpoint = import.meta.env.DEV 
         ? '/api/graphql-engine/v1/graphql'
-        : 'https://platform.zone01.gr/api/graphql-engine/v1/graphql';
+        : 'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://platform.zone01.gr/api/graphql-engine/v1/graphql');
       
       const response = await fetch(endpoint, {
         method: 'POST',
