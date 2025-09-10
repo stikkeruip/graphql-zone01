@@ -4,6 +4,7 @@ import UserOverview from './components/UserOverview'
 import { authService } from './services/authService'
 import './components/Login.css'
 import './App.css'
+import zone01Logo from '/zone01.svg'
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -104,7 +105,7 @@ function App() {
     <div style={{ minHeight: '100vh', background: '#0a0a0f', color: 'white' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px', marginBottom: '0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <img src="/zone01.svg" alt="Zone01" style={{ height: '32px', width: 'auto' }} />
+          <img src={zone01Logo} alt="Zone01" style={{ height: '32px', width: 'auto' }} />
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <span style={{ color: '#ffffff', fontSize: '1rem', fontWeight: '500' }}>
