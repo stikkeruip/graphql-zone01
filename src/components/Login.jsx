@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { authService } from '../services/authService';
-import zone01Logo from '/zone01.svg';
 
 export default function Login({ onLoginSuccess }) {
   const [credentials, setCredentials] = useState({
@@ -101,7 +100,7 @@ export default function Login({ onLoginSuccess }) {
     <div className="login-container">
       <div className="login-card">
         <div className="login-header">
-            <img src={zone01Logo} alt="Zone01" className="logo-icon" />
+            <img src="/zone01.svg" alt="Zone01" className="logo-icon" />
         </div>
         
         <form className="login-form" onSubmit={handleSubmit} autoComplete="off">
