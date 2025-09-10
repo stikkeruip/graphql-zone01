@@ -1,0 +1,460 @@
+/* User Overview - Using Login Page Theme */
+
+.overview-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 0px 40px 20px;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+}
+
+
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 40px;
+  width: 100%;
+  align-items: start;
+}
+
+.left-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.right-section {
+  min-height: 100%;
+}
+
+.overview-section {
+  background: #151520;
+  border: 1px solid #2a2a35;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  position: relative;
+  backdrop-filter: blur(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overview-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #8b5cf6, transparent);
+  opacity: 0.8;
+}
+
+.overview-section:hover {
+  background: rgba(21, 21, 32, 0.9);
+  border-color: #8b5cf6;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(139, 92, 246, 0.2),
+    0 0 40px rgba(139, 92, 246, 0.15);
+  transform: translateY(-4px);
+}
+
+.overview-section h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+/* XP Display */
+.xp-display {
+  color: #8b5cf6;
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+}
+
+.xp-unit {
+  color: #a0a0b0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Skills List */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-item:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.skill-name {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.9rem;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.skill-grade {
+  color: #8b5cf6;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-left: 12px;
+}
+
+/* Audits List */
+.audits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.audit-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+  background: rgba(168, 85, 247, 0.05);
+  border: 1px solid rgba(168, 85, 247, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.audit-item:hover {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.2);
+}
+
+.audit-grade {
+  color: #a855f7;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.audit-auditor {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.audit-date {
+  color: #a0a0b0;
+  font-size: 0.8rem;
+}
+
+/* Activity List */
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(34, 197, 94, 0.05);
+  border: 1px solid rgba(34, 197, 94, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.activity-item:hover {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.activity-name {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.activity-xp {
+  color: #22c55e;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.activity-grade {
+  color: #8b5cf6;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.activity-date {
+  color: #a0a0b0;
+  font-size: 0.8rem;
+}
+
+/* Loading and Error States */
+.overview-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: #a0a0b0;
+  font-size: 1.1rem;
+}
+
+.overview-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: #ff0080;
+  font-size: 1rem;
+  text-align: center;
+  background: rgba(255, 0, 128, 0.1);
+  border: 1px solid rgba(255, 0, 128, 0.3);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+
+.no-data {
+  color: #a0a0b0;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 16px;
+  font-style: italic;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .overview-container {
+    padding: 20px 15px 10px;
+  }
+
+  .overview-greeting {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .left-sections {
+    gap: 20px;
+  }
+
+  .overview-section {
+    padding: 24px;
+  }
+
+  .xp-display {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .overview-container {
+    padding: 15px 10px 5px;
+  }
+
+  .overview-greeting {
+    font-size: 1.25rem;
+  }
+
+  .overview-section {
+    padding: 20px;
+  }
+
+  .skill-name,
+  .activity-name {
+    font-size: 0.8rem;
+  }
+}
+
+/* XP Chart Styles */
+.xp-chart-container {
+  background: #151520;
+  border: 1px solid #2a2a35;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  position: relative;
+  backdrop-filter: blur(20px);
+  height: 100%;
+  min-height: 500px;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chart-header h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.chart-stats {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  color: #a0a0b0;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.stat-value {
+  color: #8b5cf6;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.xp-chart {
+  max-width: 100%;
+  height: auto;
+}
+
+.data-point {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.data-point:hover {
+  r: 6;
+  filter: drop-shadow(0 0 8px #8b5cf6);
+}
+
+/* Clickable section styling */
+.overview-section.clickable {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overview-section.clickable:hover {
+  background: rgba(21, 21, 32, 0.9);
+  border-color: #8b5cf6;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(139, 92, 246, 0.2),
+    0 0 40px rgba(139, 92, 246, 0.15);
+  transform: translateY(-4px);
+}
+
+.overview-section.clickable::after {
+  content: '→';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  transform: none;
+  color: #8b5cf6;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overview-section.clickable:hover::after {
+  opacity: 1;
+}
+
+/* Folder Selector Styles */
+.folder-selector {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.folder-tab {
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  color: #a0a0b0;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+.folder-tab:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+  color: #ffffff;
+}
+
+.folder-tab.active {
+  background: rgba(139, 92, 246, 0.3);
+  border-color: #8b5cf6;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
